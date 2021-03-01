@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "allen18test-9db8"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "allen18test-9db8"
+  template:
+    metadata:
+      labels:
+        app: "allen18test-9db8"
+    spec:
+      containers:
+        - name: "allen18test-9db8"
+          image: "allentestcr.azurecr.io/allen18test"
+          ports:
+          - containerPort: 80
